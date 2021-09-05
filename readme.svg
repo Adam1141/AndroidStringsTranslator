@@ -1,0 +1,172 @@
+<svg viewBox="0 0 1000 2600" width="1000" height="2600" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <style>
+      foreignObject { 
+        background-color: blue; 
+        border-radius: 5rem;
+      }
+      
+      .parent-div {
+            width: 1000px;
+            height: 2600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 1.25rem;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.9), black);
+            color: rgba(255, 255, 255, 0.65);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            line-height: 1.5;
+      }
+      
+      .parent-div * {
+        width: 90%;
+      }
+      
+      .container-pre {
+        font-size: 0.85rem;
+      }
+      
+      h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin: 25px 0 50px 0;
+      }
+      
+      h1, h2 {
+        font-family: 'Lucida Grande';
+        color: rgba(255, 255, 255, 0.85);
+      }
+      
+      .tab {
+            display: inline-block;
+            width: 40px;
+      }
+      
+      p {
+        margin-left: 40px;
+      }
+      
+    </style>
+    <div class="parent-div" xmlns="http://www.w3.org/1999/xhtml">
+        <h1>Android Strings Translator</h1>
+        <main>
+            <section class="section">
+                <h2>what?</h2>
+                <p>
+                    this is a python script that helps you translate android
+                    strings.xml file to other languages using googletrans.
+                </p>
+            </section>
+            <section class="section">
+                <h2>why?</h2>
+                <p>
+                    I didn't find an easy and free way to translate android strings.xml file online, that's why.
+                </p>
+            </section>
+            <section class="section">
+                <h2>how?</h2>  
+              <p>
+                1) clone this repository
+                <br/>2) install needed packages from the given requirements.txt file.
+                <br/><span class="tab"></span>using:
+                <br/><span class="tab"></span><pre class="container-pre" style="display: inline-block;">pip install -r requirements.txt</pre>
+                <br/>3) <pre class="container-pre" style="display: inline-block;">python transtring.py -i &lt;input_file> -o &lt;output_directory> -f [from_language] -t [to_language]</pre>
+              </p>
+              <p>
+                    after translation is finished, translations are saved inside
+                    directories with names like values-xx or values-xxx, where 
+                    the -xx or -xxx suffix are ISO-639-2 or BCP 47 language codes
+                    that correspond to the translated strings.xml file saved inside
+                    of each directory.
+                </p>
+                <p>
+                    make sure to revise the
+                    results as there might be some errors in translation. after
+                    that you can copy the created values-xx / values-xxx
+                    directories and paste them inside your android app resource
+                    directory, as easy as that.
+                </p>
+            </section>
+            
+          
+            <pre class="container-pre">
+              
+usage:
+     python transtring.py -i &lt;input_file> -o &lt;output_directory> -f [from_language] -t [to_language]
+
+examples:
+translate to one language (Italian):
+     python .\transtring.py -i .\test\strings.xml -o .\test\ -t it
+
+translate to multiple languages (Turkish, Russian and Bengali):
+     python .\transtring.py -i .\test\strings.xml -o .\test\ -t tr:ru:bn
+
+translate to default languages:
+     python .\transtring.py -i .\test\strings.xml -o .\test\
+
+options:
+-h / --help              _ to get this help message
+-i / --input-file        _ relative or absolute path to the strings.xml file to translate to other languages
+-o / --output-directory  _ relative or absolute path to the directory to save the results to
+-f / --from-language     _ language code ISO-639-2 or BCP 47 to translate from, if not specified,
+                            will default to auto detect
+-t / --to-language       _ language code/s ISO-639-2 or BCP 47 to translate to.
+                           to translate to one language only => -t xx
+                           to translate to multiple languages => -t xx:yy:zz , i.e separate codes with colon
+                           if no code is specified, will translate to these 17 languages:
+                             1) Chinese (simplified) - zh-cn
+                             2) Spanish              - es
+                             3) German               - de
+                             4) French               - fr
+                             5) Arabic               - ar
+                             6) Russian              - ru
+                             7) Portuguese           - pt
+                             8) Japanese             - ja
+                             9) Hindi                - hi
+                            10) Italian              - it
+                            11) English              - en
+                            12) Korean               - ko
+                            13) Indonesian           - id
+                            14) Punjabi              - pa
+                            15) Javanese             - jw
+                            16) Bengali              - bn
+                            17) Hebrew               - iw
+
+
+supported language codes:
+af - afrikaans                gl - galician                 lo - lao                      sm - samoan
+am - amharic                  gu - gujarati                 lt - lithuanian               sn - shona
+ar - arabic                   ha - hausa                    lv - latvian                  so - somali
+az - azerbaijani              haw - hawaiian                mg - malagasy                 sq - albanian
+be - belarusian               he - hebrew                   mi - maori                    sr - serbian
+bg - bulgarian                hi - hindi                    mk - macedonian               st - sesotho
+bn - bengali                  hmn - hmong                   ml - malayalam                su - sundanese
+bs - bosnian                  hr - croatian                 mn - mongolian                sv - swedish
+ca - catalan                  ht - haitian creole           mr - marathi                  sw - swahili
+ceb - cebuano                 hu - hungarian                ms - malay                    ta - tamil
+co - corsican                 hy - armenian                 mt - maltese                  te - telugu
+cs - czech                    id - indonesian               my - myanmar (burmese)        tg - tajik
+cy - welsh                    ig - igbo                     ne - nepali                   th - thai
+da - danish                   is - icelandic                nl - dutch                    tl - filipino
+de - german                   it - italian                  no - norwegian                tr - turkish
+el - greek                    iw - hebrew                   ny - chichewa                 ug - uyghur
+en - english                  ja - japanese                 or - odia                     uk - ukrainian
+eo - esperanto                jw - javanese                 pa - punjabi                  ur - urdu
+es - spanish                  ka - georgian                 pl - polish                   uz - uzbek
+et - estonian                 kk - kazakh                   ps - pashto                   vi - vietnamese
+eu - basque                   km - khmer                    pt - portuguese               xh - xhosa
+fa - persian                  kn - kannada                  ro - romanian                 yi - yiddish
+fi - finnish                  ko - korean                   ru - russian                  yo - yoruba
+fr - french                   ku - kurdish (kurmanji)       sd - sindhi                   zh-cn - chinese (simplified)
+fy - frisian                  ky - kyrgyz                   si - sinhala                  zh-tw - chinese (traditional)
+ga - irish                    la - latin                    sk - slovak                   zu - zulu
+gd - scots gaelic             lb - luxembourgish            sl - slovenian
+
+        </pre
+            >
+        </main>
+    </div>
+  </foreignObject>
+</svg>

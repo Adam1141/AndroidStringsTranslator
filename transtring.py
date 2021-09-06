@@ -4,6 +4,7 @@ import shutil
 import sys
 import time
 import xml.etree.ElementTree as ET
+import re
 import googletrans
 from pathlib import Path
 from googletrans import Translator
@@ -190,8 +191,11 @@ def main(argv):
     for to_code in alpha_2_to_list:
         translation_number += 1
 
+        # for translation to Chinise => values-zh, because values-zh-cn or values-zh-tw isn't supported in android
+        to_code_folder_suffix = to_code.split('-')[0]
+
         # new values-xx directory
-        newValuesDir = os.path.join(createdTranslationsDir, f'{subDirPrefix}-{to_code}')
+        newValuesDir = os.path.join(createdTranslationsDir, f'{subDirPrefix}-{to_code_folder_suffix}')
 
         # create directory and sub directory (value-xx) to save strings.xml inside for each language
         Path(newValuesDir).mkdir(parents=True, exist_ok=True)
@@ -217,8 +221,16 @@ def main(argv):
         #     translation_number -= 1
         #     continue
 
-        # split the translated and delimited string to a list
-        translated_strings_list = translations.text.split(delimiter)
+        # handle returned translation
+        returned_translations_string = translations.text
+
+        # correct single quote translation in languages like French or Italian
+        corrected_returned_string = re.sub(r"(?<!\\)'", r"\'", returned_translations_string)
+
+        # corret newline in translation from LTR to RTL languages
+        corrected_returned_string = re.sub(r"\\ n", r'\\n', corrected_returned_string)
+
+        translated_strings_list:list[str] = corrected_returned_string.split(delimiter)
 
         # update translated strings.xml inside values-xx
         xmlTree = ET.parse(os.path.join(newValuesDir, 'strings.xml'))
@@ -249,38 +261,37 @@ def main(argv):
                     "err_message": err_msg_delimiter_problem
                 }
             )
+
+        # check if no translations were received
+        same_strings_counter = 0
+        for i in range(0, len(translated_elm_list)):
+            if translated_elm_list[i].text == translated_strings_list[i]:
+                same_strings_counter += 1
+        if same_strings_counter == len(translated_elm_list) and to_code != alpha_2_from:
+            print(f'{"status:".ljust(ljust_here, " ")} failed\n'
+                  f'{"error:".ljust(ljust_here)} no translations were received'
+                  , flush=True)
+            error_list.append(
+                {
+                    "at_iter": translation_number,
+                    "from_to": f'{alpha_2_from} - {googletrans.LANGUAGES.get(alpha_2_from)}  -->  {to_code} - {googletrans.LANGUAGES.get(to_code)}',
+                    "sent": strings_sent_len,
+                    "received": strings_received_len,
+                    "err_message": err_msg_too_many_reqs
+                }
+            )
+
         else:
-            # check if no translations were received
-            same_strings_counter = 0
+            # insert translated strings to new strings.xml file
             for i in range(0, len(translated_elm_list)):
-                if translated_elm_list[i].text == translated_strings_list[i]:
-                    same_strings_counter += 1
-            if same_strings_counter == len(translated_elm_list) and to_code != alpha_2_from:
-                print(f'{"status:".ljust(ljust_here, " ")} failed\n'
-                      f'{"error:".ljust(ljust_here)} no translations were received'
-                      , flush=True)
-                error_list.append(
-                    {
-                        "at_iter": translation_number,
-                        "from_to": f'{alpha_2_from} - {googletrans.LANGUAGES.get(alpha_2_from)}  -->  {to_code} - {googletrans.LANGUAGES.get(to_code)}',
-                        "sent": strings_sent_len,
-                        "received": strings_received_len,
-                        "err_message": err_msg_too_many_reqs
-                    }
-                )
+                if i < len(translated_strings_list):
+                    translated_elm_list[i].text = translated_strings_list[i]
 
-            else:
-                # if all is good
-                # insert translated strings to new strings.xml file
-                for i in range(0, len(translated_elm_list)):
-                    if i < len(translated_strings_list):
-                        translated_elm_list[i].text = translated_strings_list[i]
+            # apply changes to new strings.xml file
+            xmlTree.write(os.path.join(newValuesDir, 'strings.xml'), encoding='UTF-8', xml_declaration=True)
 
-                # apply changes to new strings.xml file
-                xmlTree.write(os.path.join(newValuesDir, 'strings.xml'), encoding='UTF-8', xml_declaration=True)
-
-                print(f'{"status:".ljust(ljust_here, " ")} success\n'
-                      f'{sep_under}', flush=True)
+            print(f'{"status:".ljust(ljust_here, " ")} success\n'
+                  f'{sep_under}', flush=True)
 
     # find how much time it took to translate
     end_time = time.perf_counter()
@@ -294,6 +305,7 @@ def main(argv):
           f'check the results at {createdTranslationsDir}'
           , flush=True)
 
+    # left justifty width for use below
     lj_w_1 = 10
     if len(error_list) > 0:
         print(f'review problems below:\n'

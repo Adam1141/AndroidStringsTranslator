@@ -88,6 +88,11 @@
                     directories and paste them inside your android app resource
                     directory, as easy as that.
                 </p>
+
+                <p>
+                    * important:
+                    <br/>currently translations only can be made from English - en to other languages.
+                </p>
             </section>
             
           

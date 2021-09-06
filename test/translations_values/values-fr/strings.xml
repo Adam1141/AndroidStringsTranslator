@@ -37,9 +37,9 @@
     <string name="override">Passer outre</string>
     <string name="ignore">Ignorer</string>
     <string name="try_again_later">Réessayez plus tard</string>
-    <string name="import_succeeded">l'importation a réussi</string>
-    <string name="import_failed">l'importation a échoué</string>
-    <string name="ok">D'accord</string>
+    <string name="import_succeeded">l\'importation a réussi</string>
+    <string name="import_failed">l\'importation a échoué</string>
+    <string name="ok">D\'accord</string>
     <string name="yes">Oui</string>
     <string name="no">Non</string>
     <string name="cancelled">annulé</string>

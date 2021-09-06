@@ -23,7 +23,7 @@
     <string name="personal_name">Nome personale</string>
     <string name="name">nome</string>
     <string name="dark_mode">Modalità scura</string>
-    <string name="start_date">data d'inizio</string>
+    <string name="start_date">data d\'inizio</string>
     <string name="end_date">data di fine</string>
     <string name="search">Ricerca</string>
     <string name="sort">Ordinare</string>

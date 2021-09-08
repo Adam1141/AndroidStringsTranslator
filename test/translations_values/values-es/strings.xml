@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">Traductor de cadenas de Android</string>
-    <string name="editor">Editar</string>
-    <string name="settings">Ajustes</string>
-    <string name="about">Sobre</string>
-    <string name="read">Leer</string>
-    <string name="home">Hogar</string>
-    <string name="viewer">Vista</string>
+    <string name="app_name" translatable="false">Android Strings Translator</string>
+    <string name="editor" translatable="false">Edit</string>
+    <string name="settings" translatable="true">Ajustes</string>
+    <string name="about" translatable="true">Sobre</string>
+    <string name="read" translatable="false">Read</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="viewer" translatable="false">View</string>
     <string name="word_continue">Continuar</string>
     <string name="unlock">desbloquear</string>
     <string name="delete">Borrar</string>
-    <string name="edit">Editar</string>
-    <string name="save">Ahorrar</string>
+    <string name="edit" translatable="false">Edit</string>
+    <string name="save" translatable="true">Ahorrar</string>
     <string name="redo">Rehacer</string>
     <string name="undo">Deshacer</string>
     <string name="contact">Contacto</string>

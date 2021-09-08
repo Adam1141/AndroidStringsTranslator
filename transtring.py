@@ -8,6 +8,7 @@ import re
 import googletrans
 from pathlib import Path
 from googletrans import Translator
+from googletrans.client import Translated
 
 def main(argv):
     start_time = time.perf_counter()
@@ -191,8 +192,17 @@ def main(argv):
     for to_code in alpha_2_to_list:
         translation_number += 1
 
-        # for translation to Chinise => values-zh, because values-zh-cn or values-zh-tw isn't supported in android
+        # for translation to Chinese => values-zh, because values-zh-cn or values-zh-tw isn't supported in android
         to_code_folder_suffix = to_code.split('-')[0]
+
+        # change new codes to old codes supported in android
+        old_new_codes =[
+            ['iw', 'ji', 'in'],     # old
+            ['he', 'yi', 'id']      # new
+        ]
+        for i in range(len(old_new_codes[0])):
+            if to_code_folder_suffix == old_new_codes[1][i]:
+                to_code_folder_suffix = old_new_codes[0][i]
 
         # new values-xx directory
         newValuesDir = os.path.join(createdTranslationsDir, f'{subDirPrefix}-{to_code_folder_suffix}')
@@ -207,11 +217,16 @@ def main(argv):
         original_xml_tree = ET.parse(input_file)
         original_xml_root = original_xml_tree.getroot()
         original_file_strings_list = []
+
         for elm in original_xml_root.findall('string'):
-            original_file_strings_list.append(elm.text)
+            attr_translatable = elm.attrib.get('translatable')
+            if attr_translatable != 'false':
+                original_file_strings_list.append(elm.text)
+
+        large_string_to_send = delimiter.join(original_file_strings_list)
 
         # translate all strings as one delimited string
-        translations = translator.translate(delimiter.join(original_file_strings_list), to_code, alpha_2_from)
+        translations: Translated = translator.translate(large_string_to_send, to_code, alpha_2_from)
 
         # translated from, in case 'auto' is specified we get the detected language code, else we get the code we sent
         alpha_2_from = translations.src
@@ -237,7 +252,7 @@ def main(argv):
         rootElm = xmlTree.getroot()
         translated_elm_list = rootElm.findall('string')
         strings_received_len = len(translated_strings_list)
-        strings_sent_len = len(translated_elm_list)
+        strings_sent_len = len(original_file_strings_list)
 
         # left justify width here
         ljust_here = 7
@@ -264,9 +279,13 @@ def main(argv):
 
         # check if no translations were received
         same_strings_counter = 0
+        # for translated_strings_list
+        t=0
         for i in range(0, len(translated_elm_list)):
-            if translated_elm_list[i].text == translated_strings_list[i]:
+            attr_translatable = translated_elm_list[i].attrib.get('translatable')
+            if attr_translatable != 'false' and translated_elm_list[i].text == translated_strings_list[t]:
                 same_strings_counter += 1
+                t+=1
         if same_strings_counter == len(translated_elm_list) and to_code != alpha_2_from:
             print(f'{"status:".ljust(ljust_here, " ")} failed\n'
                   f'{"error:".ljust(ljust_here)} no translations were received'
@@ -283,9 +302,12 @@ def main(argv):
 
         else:
             # insert translated strings to new strings.xml file
+            t = 0 # for translated_strings_list
             for i in range(0, len(translated_elm_list)):
-                if i < len(translated_strings_list):
-                    translated_elm_list[i].text = translated_strings_list[i]
+                attr_translatable = translated_elm_list[i].attrib.get('translatable')
+                if attr_translatable != 'false':
+                    translated_elm_list[i].text = translated_strings_list[t]
+                    t+=1
 
             # apply changes to new strings.xml file
             xmlTree.write(os.path.join(newValuesDir, 'strings.xml'), encoding='UTF-8', xml_declaration=True)

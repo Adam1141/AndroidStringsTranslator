@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">Android文字列翻訳者</string>
-    <string name="editor">編集</string>
-    <string name="settings">設定</string>
-    <string name="about">だいたい</string>
-    <string name="read">読んだ</string>
-    <string name="home">家</string>
-    <string name="viewer">意見</string>
+    <string name="app_name" translatable="false">Android Strings Translator</string>
+    <string name="editor" translatable="false">Edit</string>
+    <string name="settings" translatable="true">設定</string>
+    <string name="about" translatable="true">だいたい</string>
+    <string name="read" translatable="false">Read</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="viewer" translatable="false">View</string>
     <string name="word_continue">継続する</string>
     <string name="unlock">ロックを解除する</string>
     <string name="delete">消去</string>
-    <string name="edit">編集</string>
-    <string name="save">保存する</string>
+    <string name="edit" translatable="false">Edit</string>
+    <string name="save" translatable="true">保存する</string>
     <string name="redo">やり直し</string>
     <string name="undo">元に戻す</string>
     <string name="contact">コンタクト</string>

@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">Android 字符串翻译器</string>
-    <string name="editor">编辑</string>
-    <string name="settings">设置</string>
-    <string name="about">关于</string>
-    <string name="read">读</string>
-    <string name="home">家</string>
-    <string name="viewer">看法</string>
+    <string name="app_name" translatable="false">Android Strings Translator</string>
+    <string name="editor" translatable="false">Edit</string>
+    <string name="settings" translatable="true">设置</string>
+    <string name="about" translatable="true">关于</string>
+    <string name="read" translatable="false">Read</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="viewer" translatable="false">View</string>
     <string name="word_continue">继续</string>
     <string name="unlock">开锁</string>
     <string name="delete">删除</string>
-    <string name="edit">编辑</string>
-    <string name="save">节省</string>
+    <string name="edit" translatable="false">Edit</string>
+    <string name="save" translatable="true">节省</string>
     <string name="redo">重做</string>
     <string name="undo">撤消</string>
     <string name="contact">接触</string>

@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">Traducteur de chaînes Android</string>
-    <string name="editor">Éditer</string>
-    <string name="settings">Paramètres</string>
-    <string name="about">Sur</string>
-    <string name="read">Lire</string>
-    <string name="home">Accueil</string>
-    <string name="viewer">Vue</string>
+    <string name="app_name" translatable="false">Android Strings Translator</string>
+    <string name="editor" translatable="false">Edit</string>
+    <string name="settings" translatable="true">Paramètres</string>
+    <string name="about" translatable="true">Sur</string>
+    <string name="read" translatable="false">Read</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="viewer" translatable="false">View</string>
     <string name="word_continue">Continuer</string>
     <string name="unlock">Ouvrir</string>
     <string name="delete">Effacer</string>
-    <string name="edit">Éditer</string>
-    <string name="save">sauvegarder</string>
+    <string name="edit" translatable="false">Edit</string>
+    <string name="save" translatable="true">sauvegarder</string>
     <string name="redo">Refaire</string>
     <string name="undo">annuler</string>
     <string name="contact">Contact</string>

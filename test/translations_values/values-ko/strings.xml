@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">안드로이드 문자열 번역기</string>
-    <string name="editor">편집하다</string>
-    <string name="settings">설정</string>
-    <string name="about">에 대한</string>
-    <string name="read">읽다</string>
-    <string name="home">집</string>
-    <string name="viewer">보다</string>
+    <string name="app_name" translatable="false">Android Strings Translator</string>
+    <string name="editor" translatable="false">Edit</string>
+    <string name="settings" translatable="true">설정</string>
+    <string name="about" translatable="true">에 대한</string>
+    <string name="read" translatable="false">Read</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="viewer" translatable="false">View</string>
     <string name="word_continue">계속하다</string>
     <string name="unlock">터놓다</string>
     <string name="delete">삭제</string>
-    <string name="edit">편집하다</string>
-    <string name="save">구하다</string>
+    <string name="edit" translatable="false">Edit</string>
+    <string name="save" translatable="true">구하다</string>
     <string name="redo">다시 하다</string>
     <string name="undo">실행 취소</string>
     <string name="contact">연락하다</string>

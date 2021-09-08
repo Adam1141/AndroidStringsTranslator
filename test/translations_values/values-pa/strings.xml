@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">ਐਂਡਰਾਇਡ ਸਤਰ ਅਨੁਵਾਦਕ</string>
-    <string name="editor">ਸੰਪਾਦਿਤ ਕਰੋ</string>
-    <string name="settings">ਸੈਟਿੰਗਜ਼</string>
-    <string name="about">ਬਾਰੇ</string>
-    <string name="read">ਪੜ੍ਹੋ</string>
-    <string name="home">ਘਰ</string>
-    <string name="viewer">ਦ੍ਰਿਸ਼</string>
+    <string name="app_name" translatable="false">Android Strings Translator</string>
+    <string name="editor" translatable="false">Edit</string>
+    <string name="settings" translatable="true">ਸੈਟਿੰਗਜ਼</string>
+    <string name="about" translatable="true">ਬਾਰੇ</string>
+    <string name="read" translatable="false">Read</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="viewer" translatable="false">View</string>
     <string name="word_continue">ਜਾਰੀ ਰੱਖੋ</string>
     <string name="unlock">ਅਨਲੌਕ ਕਰੋ</string>
     <string name="delete">ਮਿਟਾਓ</string>
-    <string name="edit">ਸੰਪਾਦਿਤ ਕਰੋ</string>
-    <string name="save">ਸੰਭਾਲੋ</string>
+    <string name="edit" translatable="false">Edit</string>
+    <string name="save" translatable="true">ਸੰਭਾਲੋ</string>
     <string name="redo">ਦੁਬਾਰਾ ਕਰੋ</string>
     <string name="undo">ਵਾਪਿਸ</string>
     <string name="contact">ਸੰਪਰਕ</string>
@@ -22,7 +22,7 @@
     <string name="cancel">ਰੱਦ ਕਰੋ</string>
     <string name="personal_name">ਨਿੱਜੀ ਨਾਮ</string>
     <string name="name">ਨਾਮ</string>
-    <string name="dark_mode">ਗੂੜ੍ਹਾ ਮੋਡ</string>
+    <string name="dark_mode">ਡਾਰਕ ਮੋਡ</string>
     <string name="start_date">ਤਾਰੀਖ ਸ਼ੁਰੂ</string>
     <string name="end_date">ਸਮਾਪਤੀ ਤਾਰੀਖ</string>
     <string name="search">ਖੋਜ</string>
@@ -43,6 +43,6 @@
     <string name="yes">ਹਾਂ</string>
     <string name="no">ਨਹੀਂ</string>
     <string name="cancelled">ਰੱਦ</string>
-    <string name="go_to_settings">ਸੈਟਿੰਗਸ \'ਤੇ ਜਾਓ</string>
+    <string name="go_to_settings">ਸੈਟਿੰਗਾਂ ਤੇ ਜਾਓ</string>
     <string name="hi">ਹੈਲੋ</string>
 </resources>

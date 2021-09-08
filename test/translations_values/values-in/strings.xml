@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">Penerjemah String Android</string>
-    <string name="editor">Sunting</string>
-    <string name="settings">Pengaturan</string>
-    <string name="about">Tentang</string>
-    <string name="read">Membaca</string>
-    <string name="home">Rumah</string>
-    <string name="viewer">Melihat</string>
+    <string name="app_name" translatable="false">Android Strings Translator</string>
+    <string name="editor" translatable="false">Edit</string>
+    <string name="settings" translatable="true">Pengaturan</string>
+    <string name="about" translatable="true">Tentang</string>
+    <string name="read" translatable="false">Read</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="viewer" translatable="false">View</string>
     <string name="word_continue">Melanjutkan</string>
     <string name="unlock">Membuka kunci</string>
     <string name="delete">Menghapus</string>
-    <string name="edit">Sunting</string>
-    <string name="save">Menyimpan</string>
+    <string name="edit" translatable="false">Edit</string>
+    <string name="save" translatable="true">Menyimpan</string>
     <string name="redo">Mengulangi</string>
     <string name="undo">Membuka</string>
     <string name="contact">Kontak</string>

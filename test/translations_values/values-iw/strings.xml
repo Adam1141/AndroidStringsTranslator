@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">מתרגם מיתרי אנדרואיד</string>
-    <string name="editor">לַעֲרוֹך</string>
-    <string name="settings">הגדרות</string>
-    <string name="about">על אודות</string>
-    <string name="read">לקרוא</string>
-    <string name="home">בית</string>
-    <string name="viewer">נוף</string>
+    <string name="app_name" translatable="false">Android Strings Translator</string>
+    <string name="editor" translatable="false">Edit</string>
+    <string name="settings" translatable="true">הגדרות</string>
+    <string name="about" translatable="true">על אודות</string>
+    <string name="read" translatable="false">Read</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="viewer" translatable="false">View</string>
     <string name="word_continue">לְהַמשִׁיך</string>
     <string name="unlock">לבטל נעילה</string>
     <string name="delete">לִמְחוֹק</string>
-    <string name="edit">לַעֲרוֹך</string>
-    <string name="save">להציל</string>
+    <string name="edit" translatable="false">Edit</string>
+    <string name="save" translatable="true">להציל</string>
     <string name="redo">לַעֲשׂוֹת שׁוּב</string>
     <string name="undo">לבטל</string>
     <string name="contact">איש קשר</string>

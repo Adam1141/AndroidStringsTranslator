@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">Android Strings Translator</string>
-    <string name="editor">Editar</string>
-    <string name="settings">Definições</string>
-    <string name="about">Cerca de</string>
-    <string name="read">Leitura</string>
-    <string name="home">Casa</string>
-    <string name="viewer">Visualizar</string>
+    <string name="app_name" translatable="false">Android Strings Translator</string>
+    <string name="editor" translatable="false">Edit</string>
+    <string name="settings" translatable="true">Definições</string>
+    <string name="about" translatable="true">Cerca de</string>
+    <string name="read" translatable="false">Read</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="viewer" translatable="false">View</string>
     <string name="word_continue">Prosseguir</string>
     <string name="unlock">Desbloquear</string>
     <string name="delete">Excluir</string>
-    <string name="edit">Editar</string>
-    <string name="save">Salve </string>
+    <string name="edit" translatable="false">Edit</string>
+    <string name="save" translatable="true">Salve </string>
     <string name="redo">Refazer</string>
     <string name="undo">Desfazer</string>
     <string name="contact">Contato</string>

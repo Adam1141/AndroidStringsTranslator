@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">অ্যান্ড্রয়েড স্ট্রিংস ট্রান্সলেটর</string>
-    <string name="editor">সম্পাদনা করুন</string>
-    <string name="settings">সেটিংস</string>
-    <string name="about">সম্পর্কিত</string>
-    <string name="read">পড়ুন</string>
-    <string name="home">বাড়ি</string>
-    <string name="viewer">দেখুন</string>
+    <string name="app_name" translatable="false">Android Strings Translator</string>
+    <string name="editor" translatable="false">Edit</string>
+    <string name="settings" translatable="true">সেটিংস</string>
+    <string name="about" translatable="true">সম্পর্কিত</string>
+    <string name="read" translatable="false">Read</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="viewer" translatable="false">View</string>
     <string name="word_continue">চালিয়ে যান</string>
     <string name="unlock">আনলক</string>
     <string name="delete">মুছে ফেলা</string>
-    <string name="edit">সম্পাদনা করুন</string>
-    <string name="save">সংরক্ষণ</string>
+    <string name="edit" translatable="false">Edit</string>
+    <string name="save" translatable="true">সংরক্ষণ</string>
     <string name="redo">পুনরায় করুন</string>
     <string name="undo">পূর্বাবস্থায় ফেরান</string>
     <string name="contact">যোগাযোগ</string>

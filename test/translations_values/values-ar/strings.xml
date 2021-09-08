@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">مترجم السلاسل الروبوت</string>
-    <string name="editor">يحرر</string>
-    <string name="settings">إعدادات</string>
-    <string name="about">عن</string>
-    <string name="read">يقرأ</string>
-    <string name="home">الصفحة الرئيسية</string>
-    <string name="viewer">رأي</string>
+    <string name="app_name" translatable="false">Android Strings Translator</string>
+    <string name="editor" translatable="false">Edit</string>
+    <string name="settings" translatable="true">إعدادات</string>
+    <string name="about" translatable="true">عن</string>
+    <string name="read" translatable="false">Read</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="viewer" translatable="false">View</string>
     <string name="word_continue">يكمل</string>
     <string name="unlock">الغاء القفل</string>
     <string name="delete">حذف</string>
-    <string name="edit">يحرر</string>
-    <string name="save">يحفظ</string>
+    <string name="edit" translatable="false">Edit</string>
+    <string name="save" translatable="true">يحفظ</string>
     <string name="redo">إعادة</string>
     <string name="undo">الغاء التحميل</string>
     <string name="contact">اتصل</string>
@@ -22,7 +22,7 @@
     <string name="cancel">يلغي</string>
     <string name="personal_name">اسم شخصي</string>
     <string name="name">اسم</string>
-    <string name="dark_mode">الوضع المظلم</string>
+    <string name="dark_mode">الوضع الداكن</string>
     <string name="start_date">تاريخ البدء</string>
     <string name="end_date">تاريخ الانتهاء</string>
     <string name="search">بحث</string>
